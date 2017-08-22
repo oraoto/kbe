@@ -3,98 +3,98 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://oraoto.github.io/diy/</loc>
+    <loc>http://oraoto.github.io/kbe/diy/</loc>
     <lastmod>2017-08-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://oraoto.github.io/sd/</loc>
+    <loc>http://oraoto.github.io/kbe/sd/</loc>
     <lastmod>2017-05-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://oraoto.github.io/deployments/</loc>
+    <loc>http://oraoto.github.io/kbe/deployments/</loc>
     <lastmod>2017-04-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://oraoto.github.io/jobs/</loc>
+    <loc>http://oraoto.github.io/kbe/jobs/</loc>
     <lastmod>2017-04-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://oraoto.github.io/logging/</loc>
+    <loc>http://oraoto.github.io/kbe/logging/</loc>
     <lastmod>2017-04-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://oraoto.github.io/nodes/</loc>
+    <loc>http://oraoto.github.io/kbe/nodes/</loc>
     <lastmod>2017-04-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://oraoto.github.io/secrets/</loc>
+    <loc>http://oraoto.github.io/kbe/secrets/</loc>
     <lastmod>2017-04-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://oraoto.github.io/volumes/</loc>
+    <loc>http://oraoto.github.io/kbe/volumes/</loc>
     <lastmod>2017-04-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://oraoto.github.io/envs/</loc>
+    <loc>http://oraoto.github.io/kbe/envs/</loc>
     <lastmod>2017-04-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://oraoto.github.io/ns/</loc>
+    <loc>http://oraoto.github.io/kbe/ns/</loc>
     <lastmod>2017-04-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://oraoto.github.io/healthz/</loc>
+    <loc>http://oraoto.github.io/kbe/healthz/</loc>
     <lastmod>2017-04-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://oraoto.github.io/labels/</loc>
+    <loc>http://oraoto.github.io/kbe/labels/</loc>
     <lastmod>2017-04-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://oraoto.github.io/rcs/</loc>
+    <loc>http://oraoto.github.io/kbe/rcs/</loc>
     <lastmod>2017-04-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://oraoto.github.io/services/</loc>
+    <loc>http://oraoto.github.io/kbe/services/</loc>
     <lastmod>2017-04-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://oraoto.github.io/pods/</loc>
+    <loc>http://oraoto.github.io/kbe/pods/</loc>
     <lastmod>2017-04-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://oraoto.github.io/</loc>
+    <loc>http://oraoto.github.io/kbe/</loc>
     <lastmod>2017-08-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://oraoto.github.io/categories/</loc>
+    <loc>http://oraoto.github.io/kbe/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://oraoto.github.io/page/</loc>
+    <loc>http://oraoto.github.io/kbe/page/</loc>
     <lastmod>2017-08-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://oraoto.github.io/tags/</loc>
+    <loc>http://oraoto.github.io/kbe/tags/</loc>
     <priority>0</priority>
   </url>
   
