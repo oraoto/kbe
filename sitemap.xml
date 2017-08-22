@@ -3,98 +3,98 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://kubernetesbyexample.com/sd/</loc>
+    <loc>http://oraoto.github.io/diy/</loc>
+    <lastmod>2017-08-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://oraoto.github.io/sd/</loc>
     <lastmod>2017-05-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://kubernetesbyexample.com/deployments/</loc>
+    <loc>http://oraoto.github.io/deployments/</loc>
     <lastmod>2017-04-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://kubernetesbyexample.com/jobs/</loc>
+    <loc>http://oraoto.github.io/jobs/</loc>
     <lastmod>2017-04-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://kubernetesbyexample.com/logging/</loc>
+    <loc>http://oraoto.github.io/logging/</loc>
     <lastmod>2017-04-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://kubernetesbyexample.com/nodes/</loc>
+    <loc>http://oraoto.github.io/nodes/</loc>
     <lastmod>2017-04-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://kubernetesbyexample.com/secrets/</loc>
+    <loc>http://oraoto.github.io/secrets/</loc>
     <lastmod>2017-04-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://kubernetesbyexample.com/volumes/</loc>
+    <loc>http://oraoto.github.io/volumes/</loc>
     <lastmod>2017-04-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://kubernetesbyexample.com/envs/</loc>
+    <loc>http://oraoto.github.io/envs/</loc>
     <lastmod>2017-04-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://kubernetesbyexample.com/ns/</loc>
+    <loc>http://oraoto.github.io/ns/</loc>
     <lastmod>2017-04-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://kubernetesbyexample.com/healthz/</loc>
+    <loc>http://oraoto.github.io/healthz/</loc>
     <lastmod>2017-04-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://kubernetesbyexample.com/labels/</loc>
+    <loc>http://oraoto.github.io/labels/</loc>
     <lastmod>2017-04-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://kubernetesbyexample.com/rcs/</loc>
+    <loc>http://oraoto.github.io/rcs/</loc>
     <lastmod>2017-04-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://kubernetesbyexample.com/services/</loc>
+    <loc>http://oraoto.github.io/services/</loc>
     <lastmod>2017-04-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://kubernetesbyexample.com/diy/</loc>
+    <loc>http://oraoto.github.io/pods/</loc>
     <lastmod>2017-04-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://kubernetesbyexample.com/pods/</loc>
-    <lastmod>2017-04-24T00:00:00+00:00</lastmod>
+    <loc>http://oraoto.github.io/</loc>
+    <lastmod>2017-08-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://kubernetesbyexample.com/</loc>
-    <lastmod>2017-05-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://kubernetesbyexample.com/categories/</loc>
+    <loc>http://oraoto.github.io/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://kubernetesbyexample.com/page/</loc>
-    <lastmod>2017-05-09T00:00:00+00:00</lastmod>
+    <loc>http://oraoto.github.io/page/</loc>
+    <lastmod>2017-08-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://kubernetesbyexample.com/tags/</loc>
+    <loc>http://oraoto.github.io/tags/</loc>
     <priority>0</priority>
   </url>
   
