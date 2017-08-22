@@ -3,7 +3,7 @@ DefaultContentLanguage = "zh"
 title = "Kubernetes By Example"
 theme = "beautifulhugo"
 metaDataFormat = "yaml"
-googleAnalytics = "UA-34425776-2"
+googleAnalytics = "UA-105060513-1"
 
 [Params]
   subtitle = "Brought to you by the OpenShift team"
