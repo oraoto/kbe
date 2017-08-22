@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
   <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,7 +40,7 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
-        <span class="sr-only">Toggle navigation</span>
+        <span class="sr-only"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -124,24 +124,25 @@
   <div class="container" role="main">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <p>如果你想动手试试这些例子，可以按下面的步骤配置环境：</p>
+        <p>If you want to try out the examples here yourself, you can use the same setup
+I&rsquo;ve got locally running on my machine:</p>
 
 <ol>
-<li>安装 <a href="https://docs.openshift.org/latest/minishift/getting-started/installing.html">Minishift</a></li>
-<li>执行 <code>minishift start</code></li>
-<li>执行 <code>eval $(minishift oc-env)</code></li>
-<li>执行 <code>oc login -u system:admin</code></li>
-<li>创建到<code>oc</code>的符号连接 <code>ln -s oc kubectl</code></li>
+<li>Install <a href="https://docs.openshift.org/latest/minishift/getting-started/installing.html">Minishift</a></li>
+<li>Install <a href="https://docs.openshift.org/latest/cli_reference/get_started_cli.html#installing-the-cli">oc</a></li>
+<li>Run <code>minishift start</code></li>
+<li>Log in using <code>oc login -u system:admin</code> with password <code>admin</code></li>
+<li>Create a symlink from <code>oc</code> like so:  <code>ln -s oc kubectl</code></li>
 </ol>
 
-<p>所有的例子都使用 <a href="https://github.com/openshift/origin/releases/tag/v3.6.0">oc v3.6.0</a> 和 <a href="https://github.com/minishift/minishift/releases/tag/v1.4.1">Minishift v1.4.1</a>（即 Kubernetes 1.6） 创建。</p>
+<p>All examples have been carried out with the following version, that is, <a href="https://github.com/openshift/origin/releases/tag/v1.4.1">oc 1.4.1</a> and <a href="https://github.com/minishift/minishift/releases/tag/v1.0.0-rc.1">Minishift 1.0.0-rc.1</a> (i.e., Kubernetes 1.5):</p>
 
 <pre><code class="language-bash">$ minishift version
-minishift v1.4.1+0f658ea
+Minishift version: 1.0.0-rc.1
 
 $ kubectl version
-Client Version: version.Info{Major:&quot;1&quot;, Minor:&quot;6&quot;, GitVersion:&quot;v1.6.1+5115d708d7&quot;, GitCommit:&quot;fff65cf&quot;, GitTreeState:&quot;clean&quot;, BuildDate:&quot;2017-07-30T21:47:33Z&quot;, GoVersion:&quot;go1.7.6&quot;, Compiler:&quot;gc&quot;, Platform:&quot;windows/amd64&quot;}
-Server Version: version.Info{Major:&quot;1&quot;, Minor:&quot;6&quot;, GitVersion:&quot;v1.6.1+5115d708d7&quot;, GitCommit:&quot;fff65cf&quot;, GitTreeState:&quot;clean&quot;, BuildDate:&quot;2017-08-01T06:24:02Z&quot;, GoVersion:&quot;go1.7.6&quot;, Compiler:&quot;gc&quot;, Platform:&quot;linux/amd64&quot;}
+Client Version: version.Info{Major:&quot;1&quot;, Minor:&quot;4&quot;, GitVersion:&quot;v1.4.0+776c994&quot;, GitCommit:&quot;a9e9cf3&quot;, GitTreeState:&quot;clean&quot;, BuildDate:&quot;2017-01-24T15:12:46Z&quot;, GoVersion:&quot;go1.7.4&quot;, Compiler:&quot;gc&quot;, Platform:&quot;darwin/amd64&quot;}
+Server Version: version.Info{Major:&quot;1&quot;, Minor:&quot;5&quot;, GitVersion:&quot;v1.5.2+43a9be4&quot;, GitCommit:&quot;43a9be4&quot;, GitTreeState:&quot;clean&quot;, BuildDate:&quot;2017-03-09T19:51:29Z&quot;, GoVersion:&quot;go1.7.4&quot;, Compiler:&quot;gc&quot;, Platform:&quot;linux/amd64&quot;}
 </code></pre>
 
         
@@ -185,7 +186,7 @@ Server Version: version.Info{Major:&quot;1&quot;, Minor:&quot;6&quot;, GitVersio
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.26</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
           
         </p>
       </div>
