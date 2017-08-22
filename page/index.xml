@@ -159,16 +159,6 @@ $ kubectl create -f https://raw.githubusercontent.com/mhausenblas/kbe/master/spe
     </item>
     
     <item>
-      <title>DIY</title>
-      <link>https://oraoto.github.io/kbe/diy/</link>
-      <pubDate>Mon, 24 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://oraoto.github.io/kbe/diy/</guid>
-      <description>If you want to try out the examples here yourself, you can use the same setup I&amp;rsquo;ve got locally running on my machine:
- Install Minishift Install oc Run minishift start Log in using oc login -u system:admin with password admin Create a symlink from oc like so: ln -s oc kubectl  All examples have been carried out with the following version, that is, oc 1.4.1 and Minishift 1.0.0-rc.1 (i.</description>
-    </item>
-    
-    <item>
       <title>Pods</title>
       <link>https://oraoto.github.io/kbe/pods/</link>
       <pubDate>Mon, 24 Apr 2017 00:00:00 +0000</pubDate>

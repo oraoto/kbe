@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Zhs on Kubernetes By Example</title>
+    <link>https://oraoto.github.io/kbe/zh/</link>
+    <description>Recent content in Zhs on Kubernetes By Example</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 22 Aug 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://oraoto.github.io/kbe/zh/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>DIY</title>
+      <link>https://oraoto.github.io/kbe/diy/</link>
+      <pubDate>Tue, 22 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://oraoto.github.io/kbe/diy/</guid>
+      <description>如果你想动手试试这些例子，可以按下面的步骤配置环境：
+ 安装 Minishift 执行 minishift start 执行 eval $(minishift oc-env) 执行 oc login -u system:admin 创建到oc的符号连接 ln -s oc kubectl  所有的例子都使用 oc v3.6.0 和 Minishift v1.4.1（即 Kubernetes 1.6） 创建。
+$ minishift version minishift v1.4.1+0f658ea $ kubectl version Client Version: version.Info{Major:&amp;quot;1&amp;quot;, Minor:&amp;quot;6&amp;quot;, GitVersion:&amp;quot;v1.6.1+5115d708d7&amp;quot;, GitCommit:&amp;quot;fff65cf&amp;quot;, GitTreeState:&amp;quot;clean&amp;quot;, BuildDate:&amp;quot;2017-07-30T21:47:33Z&amp;quot;, GoVersion:&amp;quot;go1.7.6&amp;quot;, Compiler:&amp;quot;gc&amp;quot;, Platform:&amp;quot;windows/amd64&amp;quot;} Server Version: version.Info{Major:&amp;quot;1&amp;quot;, Minor:&amp;quot;6&amp;quot;, GitVersion:&amp;quot;v1.6.1+5115d708d7&amp;quot;, GitCommit:&amp;quot;fff65cf&amp;quot;, GitTreeState:&amp;quot;clean&amp;quot;, BuildDate:&amp;quot;2017-08-01T06:24:02Z&amp;quot;, GoVersion:&amp;quot;go1.7.6&amp;quot;, Compiler:&amp;quot;gc&amp;quot;, Platform:&amp;quot;linux/amd64&amp;quot;}  </description>
+    </item>
+    
+  </channel>
+</rss>
