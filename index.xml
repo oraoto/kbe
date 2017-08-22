@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kubernetes By Example</title>
-    <link>http://oraoto.github.io/kbe/</link>
+    <link>https://oraoto.github.io/kbe/</link>
     <description>Recent content on Kubernetes By Example</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Tue, 22 Aug 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://oraoto.github.io/kbe/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://oraoto.github.io/kbe/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>DIY</title>
-      <link>http://oraoto.github.io/kbe/diy/</link>
+      <link>https://oraoto.github.io/kbe/diy/</link>
       <pubDate>Tue, 22 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://oraoto.github.io/kbe/diy/</guid>
+      <guid>https://oraoto.github.io/kbe/diy/</guid>
       <description>如果你想动手试试这些例子，可以按下面的步骤配置环境：
  安装 Minishift 执行 minishift start 执行 eval $(minishift oc-env) 执行 oc login -u system:admin 创建到oc的符号连接 ln -s oc kubectl  所有的例子都使用 oc v3.6.0 和 Minishift v1.4.1（即 Kubernetes 1.6） 创建。
 $ minishift version minishift v1.4.1+0f658ea $ kubectl version Client Version: version.Info{Major:&amp;quot;1&amp;quot;, Minor:&amp;quot;6&amp;quot;, GitVersion:&amp;quot;v1.6.1+5115d708d7&amp;quot;, GitCommit:&amp;quot;fff65cf&amp;quot;, GitTreeState:&amp;quot;clean&amp;quot;, BuildDate:&amp;quot;2017-07-30T21:47:33Z&amp;quot;, GoVersion:&amp;quot;go1.7.6&amp;quot;, Compiler:&amp;quot;gc&amp;quot;, Platform:&amp;quot;windows/amd64&amp;quot;} Server Version: version.Info{Major:&amp;quot;1&amp;quot;, Minor:&amp;quot;6&amp;quot;, GitVersion:&amp;quot;v1.6.1+5115d708d7&amp;quot;, GitCommit:&amp;quot;fff65cf&amp;quot;, GitTreeState:&amp;quot;clean&amp;quot;, BuildDate:&amp;quot;2017-08-01T06:24:02Z&amp;quot;, GoVersion:&amp;quot;go1.7.6&amp;quot;, Compiler:&amp;quot;gc&amp;quot;, Platform:&amp;quot;linux/amd64&amp;quot;}  </description>
@@ -23,10 +23,10 @@ $ minishift version minishift v1.4.1+0f658ea $ kubectl version Client Version: v
     
     <item>
       <title>Service Discovery</title>
-      <link>http://oraoto.github.io/kbe/sd/</link>
+      <link>https://oraoto.github.io/kbe/sd/</link>
       <pubDate>Tue, 09 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://oraoto.github.io/kbe/sd/</guid>
+      <guid>https://oraoto.github.io/kbe/sd/</guid>
       <description>Service discovery is the process of figuring out how to connect to a service. While there is a service discovery option based on environment variables available, the DNS-based service discovery is preferable. Note that DNS is a cluster add-on so make sure your Kubernetes distribution provides for one or install it yourself.
 Let&amp;rsquo;s create a service named thesvc and an RC supervising some pods along with it:
 $ kubectl create -f https://raw.</description>
@@ -34,10 +34,10 @@ $ kubectl create -f https://raw.</description>
     
     <item>
       <title>Deployments</title>
-      <link>http://oraoto.github.io/kbe/deployments/</link>
+      <link>https://oraoto.github.io/kbe/deployments/</link>
       <pubDate>Thu, 27 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://oraoto.github.io/kbe/deployments/</guid>
+      <guid>https://oraoto.github.io/kbe/deployments/</guid>
       <description>A deployment is a supervisor for pods and replica sets, giving you fine-grained control over how and when a new pod version is rolled out as well as rolled back to a previous state.
 Let&amp;rsquo;s create a deployment called sise-deploy that supervises two replicas of a pod as well as a replica set:
 $ kubectl create -f https://raw.githubusercontent.com/mhausenblas/kbe/master/specs/deployments/d09.yaml  You can see the deployment, the replica set and the pods it looks after like so:</description>
@@ -45,10 +45,10 @@ $ kubectl create -f https://raw.githubusercontent.com/mhausenblas/kbe/master/spe
     
     <item>
       <title>Jobs</title>
-      <link>http://oraoto.github.io/kbe/jobs/</link>
+      <link>https://oraoto.github.io/kbe/jobs/</link>
       <pubDate>Thu, 27 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://oraoto.github.io/kbe/jobs/</guid>
+      <guid>https://oraoto.github.io/kbe/jobs/</guid>
       <description>A jobs is a supervisor for pods carrying out batch processes, that is, a process that runs for a certain time to completion, for example a calculation or a backup operation.
 Let&amp;rsquo;s create a job called countdown that supervises a pod counting from 9 down to 1:
 $ kubectl create -f https://raw.githubusercontent.com/mhausenblas/kbe/master/specs/jobs/job.yaml  You can see the job and the pod it looks after like so:
@@ -57,20 +57,20 @@ $ kubectl get jobs NAME DESIRED SUCCESSFUL AGE countdown 1 1 5s $ kubectl get po
     
     <item>
       <title>Logging</title>
-      <link>http://oraoto.github.io/kbe/logging/</link>
+      <link>https://oraoto.github.io/kbe/logging/</link>
       <pubDate>Thu, 27 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://oraoto.github.io/kbe/logging/</guid>
+      <guid>https://oraoto.github.io/kbe/logging/</guid>
       <description>Logging is one option to understand what is going on inside your applications and the cluster at large. Basic logging in Kubernetes makes the output a container produces available, which is a good use case for debugging. More advanced setups consider logs across nodes and store them in a central place, either within the cluster or via a dedicated (cloud-based) service.
 Let&amp;rsquo;s create a pod called logme that runs a container writing to stdout and stderr:</description>
     </item>
     
     <item>
       <title>Nodes</title>
-      <link>http://oraoto.github.io/kbe/nodes/</link>
+      <link>https://oraoto.github.io/kbe/nodes/</link>
       <pubDate>Thu, 27 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://oraoto.github.io/kbe/nodes/</guid>
+      <guid>https://oraoto.github.io/kbe/nodes/</guid>
       <description>In Kubernetes, the nodes are the worker machines where your pods run.
 As a developer you typically don&amp;rsquo;t deal with nodes, however as an admin you might want to familiarize yourself with node operations.
 To list available nodes in your cluster (note that the output will depend on the environment you&amp;rsquo;re using, I&amp;rsquo;m using Minishift):
@@ -79,30 +79,30 @@ $ kubectl get nodes NAME STATUS AGE 192.168.99.100 Ready 14d  One interesting ta
     
     <item>
       <title>Secrets</title>
-      <link>http://oraoto.github.io/kbe/secrets/</link>
+      <link>https://oraoto.github.io/kbe/secrets/</link>
       <pubDate>Thu, 27 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://oraoto.github.io/kbe/secrets/</guid>
+      <guid>https://oraoto.github.io/kbe/secrets/</guid>
       <description>You don&amp;rsquo;t want sensitive information such as a database password or an API key kept around in clear text. Secrets provide you with a mechanism to use such information in a safe and reliable way with the following properties:
  Secrets are namespaced objects, that is, exist in the context of a namespace You can access them via a volume or an environment variable from a container running in a pod The secret data on nodes is stored in tmpfs volumes A per-secret size limit of 1MB exists The API server stores secrets as plaintext in etcd  Let&amp;rsquo;s create a secret apikey that holds a (made-up) API key:</description>
     </item>
     
     <item>
       <title>Volumes</title>
-      <link>http://oraoto.github.io/kbe/volumes/</link>
+      <link>https://oraoto.github.io/kbe/volumes/</link>
       <pubDate>Thu, 27 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://oraoto.github.io/kbe/volumes/</guid>
+      <guid>https://oraoto.github.io/kbe/volumes/</guid>
       <description>A Kubernetes volume is essentially a directory accessible to all containers running in a pod. In contrast to the container-local filesystem, the data in volumes is preserved across container restarts. The medium backing a volume and its contents are determined by the volume type:
  node-local types such as emptyDir or hostPath file-sharing types such as nfs cloud provider-specific types like awsElasticBlockStore, azureDisk, or gcePersistentDisk distributed file system types, for example glusterfs or cephfs special-purpose types like secret, gitRepo  A special type of volume is PersistentVolume, which we will cover elsewhere.</description>
     </item>
     
     <item>
       <title>Environment Variables</title>
-      <link>http://oraoto.github.io/kbe/envs/</link>
+      <link>https://oraoto.github.io/kbe/envs/</link>
       <pubDate>Wed, 26 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://oraoto.github.io/kbe/envs/</guid>
+      <guid>https://oraoto.github.io/kbe/envs/</guid>
       <description>You can set environment variables for containers running in a pod and in addition, Kubernetes exposes certain runtime infos via environment variables automatically.
 Let&amp;rsquo;s launch a pod that we pass an environment variable SIMPLE_SERVICE_VERSION with the value 1.0:
 $ kubectl create -f https://raw.githubusercontent.com/mhausenblas/kbe/master/specs/envs/pod.yaml $ kubectl describe pod envs | grep IP: IP: 172.17.0.3  Now, let&amp;rsquo;s verify from within the cluster if the application running in the pod has picked up the environment variable SIMPLE_SERVICE_VERSION:</description>
@@ -110,40 +110,40 @@ $ kubectl create -f https://raw.githubusercontent.com/mhausenblas/kbe/master/spe
     
     <item>
       <title>Namespaces</title>
-      <link>http://oraoto.github.io/kbe/ns/</link>
+      <link>https://oraoto.github.io/kbe/ns/</link>
       <pubDate>Wed, 26 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://oraoto.github.io/kbe/ns/</guid>
+      <guid>https://oraoto.github.io/kbe/ns/</guid>
       <description>Namespaces provide for a scope of Kubernetes objects. You can think of it as a workspace you&amp;rsquo;re sharing with other users. Many objects such as pods and services are namespaced, while some (like nodes) are not. As a developer you&amp;rsquo;d usually simply use an assigned namespace, however admins may wish to manage them, for example to set up access control or resource quotas.
 Let&amp;rsquo;s list all namespaces (note that the output will depend on the environment you&amp;rsquo;re using, I&amp;rsquo;m using Minishift):</description>
     </item>
     
     <item>
       <title>Health Checks</title>
-      <link>http://oraoto.github.io/kbe/healthz/</link>
+      <link>https://oraoto.github.io/kbe/healthz/</link>
       <pubDate>Tue, 25 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://oraoto.github.io/kbe/healthz/</guid>
+      <guid>https://oraoto.github.io/kbe/healthz/</guid>
       <description>In order to verify if a container in a pod is healthy and ready to serve traffic, Kubernetes provides for a range of health checking mechanisms. Health checks, or probes as they are called in Kubernetes, are carried out by the kubelet to determine when to restart a container (for livenessProbe) and by services to determine if a pod should receive traffic or not (for readinessProbe).
 We will focus on HTTP health checks in the following.</description>
     </item>
     
     <item>
       <title>Labels</title>
-      <link>http://oraoto.github.io/kbe/labels/</link>
+      <link>https://oraoto.github.io/kbe/labels/</link>
       <pubDate>Tue, 25 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://oraoto.github.io/kbe/labels/</guid>
+      <guid>https://oraoto.github.io/kbe/labels/</guid>
       <description>Labels are the mechanism you use to organize Kubernetes objects. A label is a key-value pair with certain restrictions concerning length and allowed values but without any pre-defined meaning. So you&amp;rsquo;re free to choose labels as you see fit, for example, to express environments such as &amp;lsquo;this pod is running in production&amp;rsquo; or ownership, like &amp;lsquo;department X owns that pod&amp;rsquo;.
 Let&amp;rsquo;s create a pod that initially has one label (env=development):</description>
     </item>
     
     <item>
       <title>Replication Controllers</title>
-      <link>http://oraoto.github.io/kbe/rcs/</link>
+      <link>https://oraoto.github.io/kbe/rcs/</link>
       <pubDate>Tue, 25 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://oraoto.github.io/kbe/rcs/</guid>
+      <guid>https://oraoto.github.io/kbe/rcs/</guid>
       <description>A replication controller (RC) is a supervisor for long-running pods. An RC will launch a specified number of pods called replicas and makes sure that they keep running, for example when a node fails or something inside of a pod, that is, in one of its containers goes wrong.
 Let&amp;rsquo;s create an RC that supervises a single replica of a pod:
 $ kubectl create -f https://raw.githubusercontent.com/mhausenblas/kbe/master/specs/rcs/rc.yaml  You can see the RC and the pod it looks after like so:</description>
@@ -151,19 +151,19 @@ $ kubectl create -f https://raw.githubusercontent.com/mhausenblas/kbe/master/spe
     
     <item>
       <title>Services</title>
-      <link>http://oraoto.github.io/kbe/services/</link>
+      <link>https://oraoto.github.io/kbe/services/</link>
       <pubDate>Tue, 25 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://oraoto.github.io/kbe/services/</guid>
+      <guid>https://oraoto.github.io/kbe/services/</guid>
       <description>A service is an abstraction for pods, providing a stable, virtual IP (VIP) address. While pods may come and go, services allow clients to reliably connect to the containers running in the pods, using the VIP. The virtual in VIP means it’s not an actual IP address connected to a network interface but its purpose is purely to forward traffic to one or more pods. Keeping the mapping between the VIP and the pods up-to-date is the job of kube-proxy, a process that runs on every node, which queries the API server to learn about new services in the cluster.</description>
     </item>
     
     <item>
       <title>Pods</title>
-      <link>http://oraoto.github.io/kbe/pods/</link>
+      <link>https://oraoto.github.io/kbe/pods/</link>
       <pubDate>Mon, 24 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://oraoto.github.io/kbe/pods/</guid>
+      <guid>https://oraoto.github.io/kbe/pods/</guid>
       <description>A pod is a collection of containers sharing a network and mount namespace and is the basic unit of deployment in Kubernetes. All containers in a pod are scheduled on the same node.
 To launch a pod using the container image mhausenblas/simpleservice:0.5.0 and exposing a HTTP API on port 9876, execute:
 $ kubectl run sise --image=mhausenblas/simpleservice:0.5.0 --port=9876  We can now see that the pod is running:
