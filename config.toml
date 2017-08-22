@@ -1,4 +1,4 @@
-baseURL = "http://oraoto.github.io"
+baseURL = "http://oraoto.github.io/kbe/"
 DefaultContentLanguage = "en"
 title = "Kubernetes By Example"
 theme = "beautifulhugo"
