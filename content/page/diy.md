@@ -1,25 +1,26 @@
 +++
 title = "DIY"
 subtitle = "Try out for yourself"
-date = "2017-08-22"
+date = "2017-04-24"
 url = "/diy/"
 +++
 
-如果你想动手试试这些例子，可以按下面的步骤配置环境：
+If you want to try out the examples here yourself, you can use the same setup
+I've got locally running on my machine:
 
-1. 安装 [Minishift](https://docs.openshift.org/latest/minishift/getting-started/installing.html)
-1. 执行 `minishift start`
-1. 执行 `eval $(minishift oc-env)`
-1. 执行 `oc login -u system:admin`
-1. 创建到`oc`的符号连接 `ln -s oc kubectl`
+1. Install [Minishift](https://docs.openshift.org/latest/minishift/getting-started/installing.html)
+1. Install [oc](https://docs.openshift.org/latest/cli_reference/get_started_cli.html#installing-the-cli)
+1. Run `minishift start`
+1. Log in using `oc login -u system:admin` with password `admin`
+1. Create a symlink from `oc` like so:  `ln -s oc kubectl`
 
-所有的例子都使用 [oc v3.6.0](https://github.com/openshift/origin/releases/tag/v3.6.0) 和 [Minishift v1.4.1](https://github.com/minishift/minishift/releases/tag/v1.4.1)（即 Kubernetes 1.6） 创建。
+All examples have been carried out with the following version, that is, [oc 1.4.1](https://github.com/openshift/origin/releases/tag/v1.4.1) and [Minishift 1.0.0-rc.1](https://github.com/minishift/minishift/releases/tag/v1.0.0-rc.1) (i.e., Kubernetes 1.5):
 
 ```bash
 $ minishift version
-minishift v1.4.1+0f658ea
+Minishift version: 1.0.0-rc.1
 
 $ kubectl version
-Client Version: version.Info{Major:"1", Minor:"6", GitVersion:"v1.6.1+5115d708d7", GitCommit:"fff65cf", GitTreeState:"clean", BuildDate:"2017-07-30T21:47:33Z", GoVersion:"go1.7.6", Compiler:"gc", Platform:"windows/amd64"}
-Server Version: version.Info{Major:"1", Minor:"6", GitVersion:"v1.6.1+5115d708d7", GitCommit:"fff65cf", GitTreeState:"clean", BuildDate:"2017-08-01T06:24:02Z", GoVersion:"go1.7.6", Compiler:"gc", Platform:"linux/amd64"}
+Client Version: version.Info{Major:"1", Minor:"4", GitVersion:"v1.4.0+776c994", GitCommit:"a9e9cf3", GitTreeState:"clean", BuildDate:"2017-01-24T15:12:46Z", GoVersion:"go1.7.4", Compiler:"gc", Platform:"darwin/amd64"}
+Server Version: version.Info{Major:"1", Minor:"5", GitVersion:"v1.5.2+43a9be4", GitCommit:"43a9be4", GitTreeState:"clean", BuildDate:"2017-03-09T19:51:29Z", GoVersion:"go1.7.4", Compiler:"gc", Platform:"linux/amd64"}
 ```
