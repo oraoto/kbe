@@ -1,20 +1,20 @@
-This is a hands-on introduction to Kubernetes. Browse the examples:
+这是一份Kubernetes动手教程：
 
-- [pods](/pods/)
-- [labels](/labels/)
-- [replication controllers](/rcs/)
-- [deployments](/deployments/)
-- [services](/services/)
-- [service discovery](/sd/)
-- [health checks](/healthz/)
-- [environment variables](/envs/)
-- [namespaces](/ns/)
-- [volumes](/volumes/)
-- [secrets](/secrets/)
-- [logging](/logging/)
-- [jobs](/jobs/)
-- [nodes](/nodes/)
+- [pods](/kbe/pods/)
+- [labels](/kbe/labels/)
+- [replication controllers](/kbe/rcs/)
+- [deployments](/kbe/deployments/)
+- [services](/kbe/services/)
+- [service discovery](/kbe/sd/)
+- [health checks](/kbe/healthz/)
+- [environment variables](/kbe/envs/)
+- [namespaces](/kbe/ns/)
+- [volumes](/kbe/volumes/)
+- [secrets](/kbe/secrets/)
+- [logging](/kbe/logging/)
+- [jobs](/kbe/jobs/)
+- [nodes](/kbe/nodes/)
 
 
-Want to try it out yourself? You can run all this on Red Hat's distribution of
-Kubernetes, OpenShift. Follow the instructions [here](/diy/) for a local setup or sign up for [openshift.com](https://openshift.com/) for an online environment.
+想自己动手试试？你可以在 Red Hat 的 Kubernetes 发行版 OpenShift 上运行这些例子。
+跟着 [这里](/kbe/diy) 的步骤跑起一个本地环境吧或者在 [openshift.com](https://openshift.com/) 注册一个在线环境吧。
