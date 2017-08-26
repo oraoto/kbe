@@ -27,12 +27,12 @@ $ minishift version minishift v1.4.1+0f658ea $ kubectl version Client Version: v
       <pubDate>Tue, 22 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://oraoto.github.io/kbe/pods/</guid>
-      <description>Pod是一组容器的集合，这些容器会共享同一个网络和挂载命名空间。Pod是Kubernetes部署的基本单位， 一个Pod里的容器会被调度到同一个节点上。
+      <description>Pod是一组容器的集合，这些容器会共享同一个网络和挂载命名空间。Pod是Kubernetes部署的基本单位，一个Pod里的容器会被调度到同一个节点上。
 要通过容器镜像mhausenblas/simpleservice:0.5.0来启动一个Pod，并且暴露出一个9876端口的HTTP API，可以执行：
 $ kubectl run sise --image=mhausenblas/simpleservice:0.5.0 --port=9876  我们可以看到Pod已经在运行了：
 $ kubectl get pods NAME READY STATUS RESTARTS AGE sise-3210265840-k705b 1/1 Running 0 1m $ kubectl describe pod sise-3210265840-k705b | grep IP: IP: 172.17.0.3  从上面的kubectl describe命令可以看到这个Pod的IP是 172.17.0.3，在集群内（例如，可以通过minishift ssh进入）可以通过这个IP访问到这个Pod：
-[cluster] $ curl 172.17.0.3:9876/info {&amp;quot;host&amp;quot;: &amp;quot;172.17.0.3:9876&amp;quot;, &amp;quot;version&amp;quot;: &amp;quot;0.5.0&amp;quot;, &amp;quot;from&amp;quot;: &amp;quot;172.17.0.1&amp;quot;}  注意了，kubectl run会创建一个部署，要删除刚才的Pod必须执行 kubectl delete deployment sise。
-另外你可以通过配置文件来创建Pod，我们这个Pod 会跑起一个simpleservice容器外加一个通用的CentOS容器：
+[cluster] $ curl 172.17.0.3:9876/info {&amp;quot;host&amp;quot;: &amp;quot;172.17.0.3:9876&amp;quot;, &amp;quot;version&amp;quot;: &amp;quot;0.5.0&amp;quot;, &amp;quot;from&amp;quot;: &amp;quot;172.17.0.1&amp;quot;}  注意了，kubectl run会创建一个Deployment（部署），要删除刚才的Pod必须执行kubectl delete deployment sise。
+另外你可以通过配置文件来创建Pod，我们这个Pod会跑起一个simpleservice容器外加一个通用的CentOS容器：
 $ kubectl create -f https://raw.githubusercontent.com/mhausenblas/kbe/master/specs/pods/pod.yaml $ kubectl get pods NAME READY STATUS RESTARTS AGE twocontainers 2/2 Running 0 7s  我们通过exec进到CentOS，然后去访问localhost的simpleservice：</description>
     </item>
     
@@ -149,8 +149,12 @@ We will focus on HTTP health checks in the following.</description>
       <pubDate>Tue, 25 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>https://oraoto.github.io/kbe/labels/</guid>
-      <description>Labels are the mechanism you use to organize Kubernetes objects. A label is a key-value pair with certain restrictions concerning length and allowed values but without any pre-defined meaning. So you&amp;rsquo;re free to choose labels as you see fit, for example, to express environments such as &amp;lsquo;this pod is running in production&amp;rsquo; or ownership, like &amp;lsquo;department X owns that pod&amp;rsquo;.
-Let&amp;rsquo;s create a pod that initially has one label (env=development):</description>
+      <description>Label（标签）是管理Kubernetes对象的机制。一个Label就是一个键值对，其中会有一些长度和值的限制, 但是它们没有预定义的含义。所以你可以自由选择合适的Label表达你需要的意思，例如可以用Label表达&amp;rdquo;这个Pod跑在生成环境&amp;rdquo;或者“这个Pod属于部门X”。
+先创建一个最初只有一个Label（env=development）的Pod：
+$ kubectl create -f https://raw.githubusercontent.com/mhausenblas/kbe/master/specs/labels/pod.yaml $ kubectl get pods --show-labels NAME READY STATUS RESTARTS AGE LABELS labelex 1/1 Running 0 10m env=development  上面的get pods命令加了--show-labels选项，输出结果会加多一列来显示对象的Label。
+你可以给一个Pod加上新的Label：
+$ kubectl label pods labelex owner=michael $ kubectl get pods --show-labels NAME READY STATUS RESTARTS AGE LABELS labelex 1/1 Running 0 16m env=development,owner=michael  Label可以用来过滤，例如只列出owner等于micheal的Pod，可以用--selector选项：
+$ kubectl get pods --selector owner=michael NAME READY STATUS RESTARTS AGE labelex 1/1 Running 0 27m  --selector选项可以简写成-l，选出env=development的Pod：</description>
     </item>
     
     <item>
