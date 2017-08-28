@@ -124,16 +124,14 @@
   <div class="container" role="main">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <p>A deployment is a supervisor for <a href="/pods/">pods</a> and <a href="/rcs/">replica sets</a>, giving you fine-grained control over how
-and when a new pod version is rolled out as well as rolled back to a previous state.</p>
+        <p>Deployment是<a href="/pods/">Pod</a>和<a href="/rcs/">ReplicaSet</a>的管理器，通过它你可以细粒度地控制一个新的Pod在什么时候、怎样被上线或回滚到前一个状态。</p>
 
-<p>Let&rsquo;s create a <a href="https://github.com/mhausenblas/kbe/blob/master/specs/deployments/d09.yaml">deployment</a>
-called <code>sise-deploy</code> that supervises two replicas of a pod as well as a replica set:</p>
+<p>让我们创建一个叫做<code>site-deploy</code>的<a href="https://github.com/mhausenblas/kbe/blob/master/specs/deployments/d09.yaml">Deployment</a>，它会管理两个Pod副本和一个ReplicaSet：</p>
 
 <pre><code class="language-bash">$ kubectl create -f https://raw.githubusercontent.com/mhausenblas/kbe/master/specs/deployments/d09.yaml
 </code></pre>
 
-<p>You can see the deployment, the replica set and the pods it looks after like so:</p>
+<p>完成之后可以查看Deployment、ReplicaSet、Pod：</p>
 
 <pre><code class="language-bash">$ kubectl get deploy
 NAME          DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
@@ -149,28 +147,24 @@ sise-deploy-3513442901-cndsx   1/1       Running   0          25s
 sise-deploy-3513442901-sn74v   1/1       Running   0          25s
 </code></pre>
 
-<p>Note the naming of the pods and replica set, derived from the deployment name.</p>
+<p>可以看到ReplicaSet和Pod的名字是从Deployment的名字派生出来的。</p>
 
-<p>At this point in time the <code>sise</code> containers running in the pods are configured
-to return the version <code>0.9</code>. Let&rsquo;s verify that from within the cluster (using <code>kubectl describe</code>
-first to get the IP of one of the pods):</p>
+<p>这个时候，Pod里的<code>sise</code>容器被配置成版本<code>0.9</code>，我们可以在集群里验证一下（先用<code>kubectl describe</code>拿到其中一个Pod的IP）：</p>
 
 <pre><code class="language-bash">[cluster] $ curl 172.17.0.3:9876/info
 {&quot;host&quot;: &quot;172.17.0.3:9876&quot;, &quot;version&quot;: &quot;0.9&quot;, &quot;from&quot;: &quot;172.17.0.1&quot;}
 </code></pre>
 
-<p>Let&rsquo;s now see what happens if we change that version to <code>1.0</code> in an updated
-<a href="https://github.com/mhausenblas/kbe/blob/master/specs/deployments/d10.yaml">deployment</a>:</p>
+<p>如果我们在一个新的<a href="https://github.com/mhausenblas/kbe/blob/master/specs/deployments/d10.yaml">Deployment</a>里把版本升到<code>1.0</code>，看看会发生什么事：</p>
 
 <pre><code class="language-bash">$ kubectl apply -f https://raw.githubusercontent.com/mhausenblas/kbe/master/specs/deployments/d10.yaml
+Warning: kubectl apply should be used on resource created by either kubectl create --save-config or kubectl apply
 deployment &quot;sise-deploy&quot; configured
 </code></pre>
 
-<p>Note that you could have used <code>kubectl edit deploy/sise-deploy</code> alternatively to
-achieve the same by manually editing the deployment.</p>
+<p>你也可以用<code>kubectl edit deploy/sise-deploy</code>来手工编辑Deployment来实现同样的效果。</p>
 
-<p>What we now see is the rollout of two new pods with the updated version <code>1.0</code> as well
-as the two old pods with version <code>0.9</code> being terminated:</p>
+<p>我们可以看到有两个版本为<code>1.0</code>的Pod上线了，同时两个版本为<code>0.9</code>的Pod被结束了：</p>
 
 <pre><code class="language-bash">$ kubectl get pods
 NAME                           READY     STATUS        RESTARTS   AGE
@@ -180,7 +174,7 @@ sise-deploy-3513442901-cndsx   1/1       Terminating   0          16m
 sise-deploy-3513442901-sn74v   1/1       Terminating   0          16m
 </code></pre>
 
-<p>Also, a new replica set has been created by the deployment:</p>
+<p>同时，Deployment还创建了一个新的ReplicaSet：</p>
 
 <pre><code class="language-bash">$ kubectl get rs
 NAME                     DESIRED   CURRENT   READY     AGE
@@ -188,16 +182,15 @@ sise-deploy-2958877261   2         2         2         4s
 sise-deploy-3513442901   0         0         0         24m
 </code></pre>
 
-<p>Note that during the deployment you can check the progress using <code>kubectl rollout status deploy/sise-deploy</code>.</p>
+<p>在部署的过程中，可以通过<code>kubectl rollout status deploy/sise-deploy</code>来查看部署的进度。</p>
 
-<p>To verify that if the new <code>1.0</code> version is really available, we execute from
-within the cluster (again using <code>kubectl describe</code> get the IP of one of the pods):</p>
+<p>要验证一下<code>1.0</code>版本真的上线了，我们可以在集群里执行（同样要先<code>kubectl describe</code>拿到一个Pod的IP）：</p>
 
 <pre><code class="language-bash">[cluster] $ curl 172.17.0.5:9876/info
 {&quot;host&quot;: &quot;172.17.0.5:9876&quot;, &quot;version&quot;: &quot;1.0&quot;, &quot;from&quot;: &quot;172.17.0.1&quot;}
 </code></pre>
 
-<p>A history of all deployments is available via:</p>
+<p>全部部署历史可以通过下面的命令获取：</p>
 
 <pre><code class="language-bash">$ kubectl rollout history deploy/sise-deploy
 deployments &quot;sise-deploy&quot;
@@ -206,9 +199,7 @@ REVISION        CHANGE-CAUSE
 2               &lt;none&gt;
 </code></pre>
 
-<p>If there are problems in the deployment Kubernetes will automatically roll back to
-the previous version, however you can also explicitly roll back to a specific revision,
-as in our case to revision 1 (the original pod version ):</p>
+<p>如果部署过程中出现问题，Kubenetes会自动回滚到前一个版本，当然你可以指定要回滚到的版本（例如这里会回滚到版本1，也就是最初的版本）：</p>
 
 <pre><code class="language-bash">$ kubectl rollout undo deploy/sise-deploy --to-revision=1
 deployment &quot;sise-deploy&quot; rolled back
@@ -225,18 +216,15 @@ sise-deploy-3513442901-ng8fz   1/1       Running   0          1m
 sise-deploy-3513442901-s8q4s   1/1       Running   0          1m
 </code></pre>
 
-<p>At this point in time we&rsquo;re back at where we started, with two new pods serving
-again version <code>0.9</code>.</p>
+<p>这时，我们就回到了最初的版本，两个Pod都是<code>0.9</code>。</p>
 
-<p>Finally, to clean up, we remove the deployment and with it the replica sets and
-pods it supervises:</p>
+<p>最后，我们把Deployment和它管理的ReplicaSet、Pod都清理掉：</p>
 
 <pre><code class="language-bash">$ kubectl delete deploy sise-deploy
 deployment &quot;sise-deploy&quot; deleted
 </code></pre>
 
-<p>See also the <a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/">docs</a>
-for more options on deployments and when they are triggered.</p>
+<p>在<a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/">文档</a>里可以找到更多Deployment的选项。</p>
 
         
       </div>

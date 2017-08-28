@@ -53,9 +53,12 @@ $ kubectl create -f https://raw.</description>
       <pubDate>Thu, 27 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>https://oraoto.github.io/kbe/deployments/</guid>
-      <description>A deployment is a supervisor for pods and replica sets, giving you fine-grained control over how and when a new pod version is rolled out as well as rolled back to a previous state.
-Let&amp;rsquo;s create a deployment called sise-deploy that supervises two replicas of a pod as well as a replica set:
-$ kubectl create -f https://raw.githubusercontent.com/mhausenblas/kbe/master/specs/deployments/d09.yaml  You can see the deployment, the replica set and the pods it looks after like so:</description>
+      <description>Deployment是Pod和ReplicaSet的管理器，通过它你可以细粒度地控制一个新的Pod在什么时候、怎样被上线或回滚到前一个状态。
+让我们创建一个叫做site-deploy的Deployment，它会管理两个Pod副本和一个ReplicaSet：
+$ kubectl create -f https://raw.githubusercontent.com/mhausenblas/kbe/master/specs/deployments/d09.yaml  完成之后可以查看Deployment、ReplicaSet、Pod：
+$ kubectl get deploy NAME DESIRED CURRENT UP-TO-DATE AVAILABLE AGE sise-deploy 2 2 2 2 10s $ kubectl get rs NAME DESIRED CURRENT READY AGE sise-deploy-3513442901 2 2 2 19s $ kubectl get pods NAME READY STATUS RESTARTS AGE sise-deploy-3513442901-cndsx 1/1 Running 0 25s sise-deploy-3513442901-sn74v 1/1 Running 0 25s  可以看到ReplicaSet和Pod的名字是从Deployment的名字派生出来的。
+这个时候，Pod里的sise容器被配置成版本0.9，我们可以在集群里验证一下（先用kubectl describe拿到其中一个Pod的IP）：
+[cluster] $ curl 172.17.0.3:9876/info {&amp;quot;host&amp;quot;: &amp;quot;172.17.0.3:9876&amp;quot;, &amp;quot;version&amp;quot;: &amp;quot;0.9&amp;quot;, &amp;quot;from&amp;quot;: &amp;quot;172.</description>
     </item>
     
     <item>
@@ -163,9 +166,12 @@ $ kubectl get pods --selector owner=michael NAME READY STATUS RESTARTS AGE label
       <pubDate>Tue, 25 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>https://oraoto.github.io/kbe/rcs/</guid>
-      <description>A replication controller (RC) is a supervisor for long-running pods. An RC will launch a specified number of pods called replicas and makes sure that they keep running, for example when a node fails or something inside of a pod, that is, in one of its containers goes wrong.
-Let&amp;rsquo;s create an RC that supervises a single replica of a pod:
-$ kubectl create -f https://raw.githubusercontent.com/mhausenblas/kbe/master/specs/rcs/rc.yaml  You can see the RC and the pod it looks after like so:</description>
+      <description>Replication Controller（RC，副本控制器）是长期运行Pod的管理器。 一个RC会启动指定个数的Pod（称作replicas（副本）），并且保证在节点故障或者Pod里的容器出错时副本能持续运行。
+下面创建一个RC，它会管理一个Pod副本：
+$ kubectl create -f https://raw.githubusercontent.com/mhausenblas/kbe/master/specs/rcs/rc.yaml  完成之后就可以看到RC和它的Pod：
+$ kubectl get rc NAME DESIRED CURRENT READY AGE rcex 1 1 1 3m $ kubectl get pods --show-labels NAME READY STATUS RESTARTS AGE LABELS rcex-qrv8j 1/1 Running 0 4m app=sise  注意两件事:
+ 被管理的Pod会有一个随机的名字（rcex-qrv8j） RC会通过Label（这里的app=sise）来跟踪记录它管理的Pod  要进行扩容，也就是增加副本的个数，可以执行：
+$ kubectl scale --replicas=3 rc/rcex $ kubectl get pods -l app=sise NAME READY STATUS RESTARTS AGE rcex-1rh9r 1/1 Running 0 54s rcex-lv6xv 1/1 Running 0 54s rcex-qrv8j 1/1 Running 0 10m  最后，用下面的命令删除掉RC和它管理的Pod：</description>
     </item>
     
     <item>
