@@ -1,19 +1,19 @@
 这是一份Kubernetes动手教程：
 
-- [pods](./pods/)
-- [labels](./labels/)
-- [replication controllers](./rcs/)
-- [deployments](./deployments/)
-- [services](./services/)
-- [service discovery](./sd/)
-- [health checks](./healthz/)
-- [environment variables](./envs/)
-- [namespaces](./ns/)
-- [volumes](./volumes/)
-- [secrets](./secrets/)
-- [logging](./logging/)
-- [jobs](./jobs/)
-- [nodes](./nodes/)
+- [Pod](./pods/)
+- [Label](./labels/)
+- [Replication Controller](./rcs/)
+- [Deployment](./deployments/)
+- [Service](./services/)
+- [Service Discovery](./sd/)
+- [Health Checks](./healthz/)
+- [Environment Variables](./envs/)
+- [Namespaces](./ns/)
+- [Volume](./volumes/)
+- [Secret](./secrets/)
+- [Logging](./logging/)
+- [Job](./jobs/)
+- [Node](./nodes/)
 
 
 想自己动手试试？你可以在 Red Hat 的 Kubernetes 发行版 OpenShift 上运行这些例子。

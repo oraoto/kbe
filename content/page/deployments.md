@@ -5,17 +5,15 @@ date = "2017-04-27"
 url = "/deployments/"
 +++
 
-A deployment is a supervisor for [pods](/pods/) and [replica sets](/rcs/), giving you fine-grained control over how
-and when a new pod version is rolled out as well as rolled back to a previous state.
+Deployment是[Pod](/pods/)和[ReplicaSet](/rcs/)的管理器，通过它你可以细粒度地控制一个新的Pod在什么时候、怎样被上线或回滚到前一个状态。
 
-Let's create a [deployment](https://github.com/mhausenblas/kbe/blob/master/specs/deployments/d09.yaml)
-called `sise-deploy` that supervises two replicas of a pod as well as a replica set:
+让我们创建一个叫做`site-deploy`的[Deployment](https://github.com/mhausenblas/kbe/blob/master/specs/deployments/d09.yaml)，它会管理两个Pod副本和一个ReplicaSet：
 
 ```bash
 $ kubectl create -f https://raw.githubusercontent.com/mhausenblas/kbe/master/specs/deployments/d09.yaml
 ```
 
-You can see the deployment, the replica set and the pods it looks after like so:
+完成之后可以查看Deployment、ReplicaSet、Pod：
 
 ```bash
 $ kubectl get deploy
@@ -32,30 +30,26 @@ sise-deploy-3513442901-cndsx   1/1       Running   0          25s
 sise-deploy-3513442901-sn74v   1/1       Running   0          25s
 ```
 
-Note the naming of the pods and replica set, derived from the deployment name.
+可以看到ReplicaSet和Pod的名字是从Deployment的名字派生出来的。
 
-At this point in time the `sise` containers running in the pods are configured
-to return the version `0.9`. Let's verify that from within the cluster (using `kubectl describe`
-first to get the IP of one of the pods):
+这个时候，Pod里的`sise`容器被配置成版本`0.9`，我们可以在集群里验证一下（先用`kubectl describe`拿到其中一个Pod的IP）：
 
 ```bash
 [cluster] $ curl 172.17.0.3:9876/info
 {"host": "172.17.0.3:9876", "version": "0.9", "from": "172.17.0.1"}
 ```
 
-Let's now see what happens if we change that version to `1.0` in an updated
-[deployment](https://github.com/mhausenblas/kbe/blob/master/specs/deployments/d10.yaml):
+如果我们在一个新的[Deployment](https://github.com/mhausenblas/kbe/blob/master/specs/deployments/d10.yaml)里把版本升到`1.0`，看看会发生什么事：
 
 ```bash
 $ kubectl apply -f https://raw.githubusercontent.com/mhausenblas/kbe/master/specs/deployments/d10.yaml
+Warning: kubectl apply should be used on resource created by either kubectl create --save-config or kubectl apply
 deployment "sise-deploy" configured
 ```
 
-Note that you could have used `kubectl edit deploy/sise-deploy` alternatively to
-achieve the same by manually editing the deployment.
+你也可以用`kubectl edit deploy/sise-deploy`来手工编辑Deployment来实现同样的效果。
 
-What we now see is the rollout of two new pods with the updated version `1.0` as well
-as the two old pods with version `0.9` being terminated:
+我们可以看到有两个版本为`1.0`的Pod上线了，同时两个版本为`0.9`的Pod被结束了：
 
 ```bash
 $ kubectl get pods
@@ -66,7 +60,7 @@ sise-deploy-3513442901-cndsx   1/1       Terminating   0          16m
 sise-deploy-3513442901-sn74v   1/1       Terminating   0          16m
 ```
 
-Also, a new replica set has been created by the deployment:
+同时，Deployment还创建了一个新的ReplicaSet：
 
 ```bash
 $ kubectl get rs
@@ -75,17 +69,16 @@ sise-deploy-2958877261   2         2         2         4s
 sise-deploy-3513442901   0         0         0         24m
 ```
 
-Note that during the deployment you can check the progress using `kubectl rollout status deploy/sise-deploy`.
+在部署的过程中，可以通过`kubectl rollout status deploy/sise-deploy`来查看部署的进度。
 
-To verify that if the new `1.0` version is really available, we execute from
-within the cluster (again using `kubectl describe` get the IP of one of the pods):
+要验证一下`1.0`版本真的上线了，我们可以在集群里执行（同样要先`kubectl describe`拿到一个Pod的IP）：
 
 ```bash
 [cluster] $ curl 172.17.0.5:9876/info
 {"host": "172.17.0.5:9876", "version": "1.0", "from": "172.17.0.1"}
 ```
 
-A history of all deployments is available via:
+全部部署历史可以通过下面的命令获取：
 
 ```bash
 $ kubectl rollout history deploy/sise-deploy
@@ -95,9 +88,7 @@ REVISION        CHANGE-CAUSE
 2               <none>
 ```
 
-If there are problems in the deployment Kubernetes will automatically roll back to
-the previous version, however you can also explicitly roll back to a specific revision,
-as in our case to revision 1 (the original pod version ):
+如果部署过程中出现问题，Kubenetes会自动回滚到前一个版本，当然你可以指定要回滚到的版本（例如这里会回滚到版本1，也就是最初的版本）：
 
 ```bash
 $ kubectl rollout undo deploy/sise-deploy --to-revision=1
@@ -115,16 +106,14 @@ sise-deploy-3513442901-ng8fz   1/1       Running   0          1m
 sise-deploy-3513442901-s8q4s   1/1       Running   0          1m
 ```
 
-At this point in time we're back at where we started, with two new pods serving
-again version `0.9`.
+这时，我们就回到了最初的版本，两个Pod都是`0.9`。
 
-Finally, to clean up, we remove the deployment and with it the replica sets and
-pods it supervises:
+最后，我们把Deployment和它管理的ReplicaSet、Pod都清理掉：
 
 ```bash
 $ kubectl delete deploy sise-deploy
 deployment "sise-deploy" deleted
 ```
 
-See also the [docs](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
-for more options on deployments and when they are triggered.
+在[文档](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)里可以找到更多Deployment的选项。
+

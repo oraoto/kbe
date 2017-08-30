@@ -5,19 +5,16 @@ date = "2017-04-25"
 url = "/rcs/"
 +++
 
-A replication controller (RC) is a supervisor for long-running pods.
-An RC will launch a specified number of pods called `replicas` and makes
-sure that they keep running, for example when a node fails or something
-inside of a pod, that is, in one of its containers goes wrong.
+Replication Controller（RC，副本控制器）是长期运行Pod的管理器。
+一个RC会启动指定个数的Pod（称作`replicas（副本）`），并且保证在节点故障或者Pod里的容器出错时副本能持续运行。
 
-Let's create an [RC](https://github.com/mhausenblas/kbe/blob/master/specs/rcs/rc.yaml)
-that supervises a single replica of a pod:
+下面创建一个[RC](https://github.com/mhausenblas/kbe/blob/master/specs/rcs/rc.yaml)，它会管理一个Pod副本：
 
 ```bash
 $ kubectl create -f https://raw.githubusercontent.com/mhausenblas/kbe/master/specs/rcs/rc.yaml
 ```
 
-You can see the RC and the pod it looks after like so:
+完成之后就可以看到RC和它的Pod：
 
 ```bash
 $ kubectl get rc
@@ -29,13 +26,13 @@ NAME           READY     STATUS    RESTARTS   AGE    LABELS
 rcex-qrv8j     1/1       Running   0          4m     app=sise
 ```
 
-Note two things here:
+注意两件事:
 
-- the supervised pod got a random name assigned
-(`rcex-qrv8j`)
-- the way the RC keeps track of its pods is via the label, here `app=sise`
+- 被管理的Pod会有一个随机的名字（`rcex-qrv8j`）
+- RC会通过Label（这里的`app=sise`）来跟踪记录它管理的Pod
 
-To scale up, that is, to increase the number of replicas, do:
+要进行扩容，也就是增加副本的个数，可以执行：
+
 
 ```bash
 $ kubectl scale --replicas=3 rc/rcex
@@ -48,11 +45,11 @@ rcex-qrv8j   1/1       Running   0          10m
 
 ```
 
-Finally, to get rid of the RC and the pods it is supervising, use:
+最后，用下面的命令删除掉RC和它管理的Pod：
 
 ```bash
 $ kubectl delete rc rcex
 replicationcontroller "rcex" deleted
 ```
 
-Note that, going forward, the RCs are called [replica sets](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/) (RS), supporting set-based selectors. The RS are already in use in the context of [deployments](/deployments/).
+在这之后，支持集合选择器的RC会被称为[ReplicaSet](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/)（RS, 副本集）。RS在介绍[Deployment](/kbe/deployments/)的时候就会用到了。
